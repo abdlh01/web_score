@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1a365d;
+  --secondary: #2563eb;
+  --accent: #60a5fa;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  overflow-x: hidden;
+  background-color: var(--primary);
+  color: white;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-blue-500/20 hover:bg-blue-500/30 text-white font-bold py-2 px-4 rounded transition-colors duration-200;
+  }
+  
+  .nav-item {
+    @apply flex flex-col items-center justify-center text-sm text-blue-200 hover:text-white transition-colors duration-200;
+  }
+  
+  .nav-item.active {
+    @apply text-white;
+  }
+  
+  .dropdown {
+    @apply bg-blue-900 border border-blue-700 rounded-md px-4 py-2 text-white;
+  }
+  
+  .card {
+    @apply bg-blue-900/80 backdrop-blur-sm border border-blue-700/50 rounded-lg shadow-lg p-4;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 58, 138, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(96, 165, 250, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(96, 165, 250, 0.7);
+}
